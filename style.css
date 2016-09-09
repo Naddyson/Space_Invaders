@@ -1,0 +1,217 @@
+html{ background-size: 100%;
+        margin:0;
+background-image: url(img/body.jpg);
+height: 100%;}
+body{
+       background-size: 80%;
+
+        
+}
+
+.canvas{
+	width: 200px;
+	
+	float: left;
+
+}
+	
+}
+a{
+	color: red;
+}
+p{
+	color: white;
+	font-size:25px;
+	display: none;
+}
+table{
+	color:white;
+	font-size: 25px;
+	align:center;
+	left:0;
+	right: 0;
+	margin: auto
+}
+.mainScore{
+	color:green;
+}
+.form{
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	text-align: center;
+}
+.score{
+	position: relative;
+	top: 1px;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	margin-bottom: 10px;
+	margin: auto;
+	display: none;
+	font-size: 30px;
+	height: 115px;
+	width: 284px;
+
+
+}
+.number{
+	width: 63px;
+	height: 115px;
+	float: left;
+	margin-right: 8px;
+
+	
+}
+#zero{
+	background-image: url("img/numbers/0.png");
+}
+#one{
+	background-image: url("img/numbers/1.png");
+}
+#two{
+	background-image: url("img/numbers/2.png");
+}
+#three{
+	background-image: url("img/numbers/3.png");
+}
+#four{
+	background-image: url("img/numbers/4.png");
+}
+#five{
+	background-image: url("img/numbers/5.png");
+}
+#six{
+	background-image: url("img/numbers/6.png");
+}
+#seven{
+	background-image: url("img/numbers/7.png");
+}
+#eight{
+	background-image: url("img/numbers/8.png");
+}
+#nine{
+	background-image: url("img/numbers/9.png");
+}
+@media screen and (max-height: 768px){
+	body{
+		zoom:0.8;
+	}
+}
+.container{
+	height: 600px;
+	width: 1230px;
+	position: relative;
+	top: 10px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	
+}
+.canvas{
+	width: 800px;
+	height: 600px;
+	float: left;
+
+}
+canvas{
+	border:1px solid silver;
+	background-color:black ;
+
+	display: none;
+	
+	/*top: 10px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;*/
+	
+}
+.highscores{
+	width: 400px;
+	height: 600px;
+	margin-left: 20px;
+	float: right;
+	background-color: black;
+	border:1px solid silver;
+	display: none;
+}
+.startWindow{
+	border: 5px solid green;
+	background-image: url(img/startWindow.jpg);
+	width: 626px;
+	height: 491px;
+	position: absolute;
+	top: 0;
+	left: 87px;
+	bottom: 0;
+	margin: auto;
+	box-shadow: 0 0 20px green;
+	display: none;
+	
+}
+
+.gameOverWindow{
+	border: 5px solid green;
+	display: none;
+	background-image: url(img/gameOver.jpg);
+	width: 480px;
+	height: 320px;
+	z-index: 1;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 180px;
+	
+	bottom: 0;
+	margin:  auto;
+
+}
+.start{
+	width: 200px;
+	height: 40px;
+	position: absolute;
+	right: 0;
+	left: 0;
+	margin: auto;
+	bottom: 28px;
+	background-color: #32CD32;
+	border-color: green;
+	font-size: 30px;
+	box-shadow: 0 2px 10px green;
+}
+.start:hover{
+	box-shadow: 0 0 30px green;
+	cursor: pointer;
+}
+.nickname{
+	width: 400px;
+	height: 115px;
+	background-color: black;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	margin: auto;
+	border: 5px solid green;
+	color: white;
+	text-align: center;
+	z-index: 2;
+}
+.footer{
+	position: relative;
+	left: 0;
+	right: 0;
+	bottom:30px;
+	margin: auto;
+	color:white;
+	text-align: center;
+	font-size: 20px;
+	display: none;
+}

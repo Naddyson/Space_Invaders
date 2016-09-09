@@ -1,0 +1,130 @@
+﻿<?php
+		$mysqli = new mysqli("mysql.hostinger.com.ua", "u793966660_naddy", "CliZ9tkhjz","u793966660_main");
+		$mysqli->query("SET NAMES 'utf8'");
+
+ 		if ($_POST['param']){
+ 			$highscore = json_decode($_POST['param']);
+ 			$mysqli->query("INSERT INTO `highscores` (`username`,`score`) VALUES('".$highscore->nickname."','".$highscore->score."')");
+ 			$sorted = $mysqli->query("SELECT * FROM `highscores` ORDER BY `score` DESC");
+ 			$i=0;
+ 			
+ 			while (($row = $sorted->fetch_assoc())!=false && $i<16) {
+ 				
+ 				$res[] = $row;
+ 				
+ 				$i++;
+ 			}
+ 			echo json_encode($res);
+ 			exit();
+ 			
+ 		}
+ 		if ($_POST['first']){
+ 			$useless = $_POST['first'];
+ 			$sorted = $mysqli->query("SELECT * FROM `highscores` ORDER BY `score` DESC");
+ 			$i=0;
+ 			
+ 			while (($row = $sorted->fetch_assoc())!=false && $i<16) {
+ 				
+ 				$res[] = $row;
+ 				
+ 				$i++;
+ 			}
+ 			echo json_encode($res);
+ 			exit();
+ 		}
+ 		
+ 		$mysqli->close();
+?>
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+	<title>SPACE INVADERS!</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=windows-1251" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="game.js"></script>
+	<style type="text/css" src="style.css">
+		
+	</style>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+</head>
+
+<body>
+	<div class="main">
+		<div class="nickname">
+			<h2>Введи пожалуйста своё имя</h2>
+			<div class="form">
+				<input type="text" id="nickname">
+				<button class="submit">Отправить</button>
+			</div>
+		</div> 
+ 		<div class="score">
+ 			<div class="number one" id="zero"></div>
+ 			<div class="number two" id="zero"></div>
+ 			<div class="number three" id="zero"></div>
+ 			<div class="number four" id="zero"></div>
+ 		</div>
+ 		
+		
+ 		<div class="container">
+ 			<div class="canvas">
+ 			<canvas width="800" height="600" id="screen">
+ 					
+ 				</canvas>
+ 					
+ 				<div class="startWindow">
+ 					<button class="start">Start</button>
+				</div>
+				<div class="gameOverWindow"> 
+ 					<button class="start">Try again!</button>
+ 	    		</div> 	
+ 				
+ 			</div>
+
+ 			<div class="highscores">
+ 				<img src="img/highscore.jpg" align="center">
+ 				<table>
+ 					<tr class="mainScore"><td width="40" align="center">№</td><td width="260">Nickname</td><td width="70" align="right">Score</td></tr>
+ 				</table>
+ 			</div>
+ 			
+ 		</div>
+ 			<p align="center">
+ 			Created by <a href="https:\\new.vk.com\id_kornak" target="_blank"> Eugene Kornak </a> 
+ 	
+		</p>
+
+
+ 	<script type="text/javascript">
+
+
+	$.fn.preload = function() {
+   this.each(function(){
+       $('<img/>')[0].src = this;
+   });
+}
+
+$(['img/startWindow.jpg','img/gameOver.jpg','img/invader.jpg','img/player1.jpg','img/player2.jpg','img/player3.jpg',
+'img/numbers/0.png',
+'img/numbers/1.png',
+'img/numbers/2.png',
+'img/numbers/3.png',
+'img/numbers/4.png',
+'img/numbers/5.png',
+'img/numbers/6.png',
+'img/numbers/7.png',
+'img/numbers/8.png',
+'img/numbers/9.png']).preload();
+</script>
+
+ 	
+</div>
+ 	
+</body>
+</html>
